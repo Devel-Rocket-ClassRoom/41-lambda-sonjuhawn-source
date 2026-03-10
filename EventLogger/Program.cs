@@ -2,12 +2,18 @@ using System;
 
 // README.md를 읽고 아래에 코드를 작성하세요.
 Console.WriteLine("```");
-var system = CreateLogger("시스템");
-var network = CreateLogger("네트워크");
+int i = 1;
+int j = 1;
+CreateLogger("시스템");
+CreateLogger("시스템");
+CreateLogger("네트워크");
+CreateLogger("시스템");
+CreateLogger("네트워크");
+CreateLogger("네트워크");
+
 
 Action<string> CreateLogger(string category)
 {
-    int i = 1;
     if (category == "시스템")
     {
         switch (i)
@@ -26,19 +32,19 @@ Action<string> CreateLogger(string category)
     }
     else if (category == "네트워크")
     {
-        switch (i)
+        switch (j)
         {
             case 1:
-                Console.WriteLine($"[{category} #{i} 클라이언트가 접속했습니다.");
+                Console.WriteLine($"[{category} #{j} 클라이언트가 접속했습니다.");
                 break;
             case 2:
-                Console.WriteLine($"[{category} #{i} 데이터를 수신했습니다.");
+                Console.WriteLine($"[{category} #{j} 데이터를 수신했습니다.");
                 break;
             case 3:
-                Console.WriteLine($"[{category} #{i}  클라이언트가 종료했습니다.");
+                Console.WriteLine($"[{category} #{j}  클라이언트가 종료했습니다.");
                 break;
         }
-        i++;
+        j++;
     }
 
     return null;
