@@ -14,6 +14,7 @@ CreateLogger("네트워크");
 
 Action<string> CreateLogger(string category)
 {
+    
     if (category == "시스템")
     {
         switch (i)
